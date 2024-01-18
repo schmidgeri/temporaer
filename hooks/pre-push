@@ -7,8 +7,13 @@ import sys
 par1 = sys.argv[1]
 par2 = sys.argv[1]
 
+print("-> pre-push")
 print("Parameter1 : {par1}")
 print("Parameter2 : {par2}")
+
+-- Der Branchname geht über die Comandlne von GeneratorExit
+-- Mit der Git-Console im Clone Repo kann dies auch ausgeführt werden: git rev-parse --abbrev-ref HEAD
+--- ---------------------------------------------------------------------------------------------------
 
 current_branch_name = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip().decode('utf-8')
 print("BranchName : {current_branch_name}")
