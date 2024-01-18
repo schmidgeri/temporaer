@@ -18,5 +18,11 @@ print("Parameter2 : {par2}")
 current_branch_name = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip().decode('utf-8')
 print("BranchName : {current_branch_name}")
 
-# Alles OK
-sys.exit(0)
+if current_branch_name == 'HEAD':
+    sys.exit(0)
+if current_branch_name == 'main':
+    sys.exit(0)
+if current_branch_name == 'develop':
+    sys.exit(0)
+
+sys.exit(1)
