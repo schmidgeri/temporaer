@@ -45,9 +45,9 @@ commit_regex = re.compile(r'^feature/.+_.+')
 # ----------------------------------
 
 # check ob Commit Text der Regex entspricht
-if not commit_regex.match(current_branch_name):
+if commit_regex.match(current_branch_name):
     # print(f"Der Branchname '{current_branch_name}' enstspricht nicht dem Format : 'feature/[Bereich]_[Beschreibung]'")
     print(f"Der Branchname enstspricht nicht dem Format : 'feature/[Bereich]_[Beschreibung]'.           Der Brachname war : '{current_branch_name}' ")
-    sys.exit(1)
+    sys.exit(0)
 
-sys.exit(0)
+sys.exit(1)
