@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import subprocess
+import re
+import sys
+
+# Auslesen der Commit-Message
+par1 = sys.argv[1]
+par2 = sys.argv[1]
+
+print("Parameter1 : {par1}")
+print("Parameter2 : {par2}")
+
+current_branch_name = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip().decode('utf-8')
+print("BranchName : {current_branch_name}")
+
+# Alles OK
+sys.exit(0)
