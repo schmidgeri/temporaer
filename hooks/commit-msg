@@ -20,13 +20,13 @@ commit_regex = re.compile(r'^[A-Z]+-\d+ .+')
 
 # check ob Commit Text der Regex entspricht
 if not commit_regex.match(commit_text):
-    print("Die Commit Message enspricht nicht dem Format. 'SDS-9999 Beschreibung'")
+    print("Die Commit Message enspricht nicht dem Format. 'SDS-[9999] [Beschreibung]'")
     sys.exit(1) 
+    
 
 # prüfen des Branch-Namen
 # =======================
 current_branch_name = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip().decode('utf-8')
-print(f"BranchName : {current_branch_name}")
 
 if current_branch_name == 'HEAD':
     sys.exit(0)
@@ -35,5 +35,19 @@ if current_branch_name == 'main':
 if current_branch_name == 'develop':
     sys.exit(0)
 
-print(f"Der Branchname enstspricht nicht dem Format : {current_branch_name}")
-sys.exit(1)
+    
+commit_regex = re.compile(r'^feature/.+_.+')
+# ----------------------------------
+# '^feature/ Beginnend mit feature/
+# .+     gefolgt von n Zeichen
+# -      Gefolgt von einem -
+# .+     gefolgt von n Zeichen
+# ----------------------------------
+
+# check ob Commit Text der Regex entspricht
+if not commit_regex.match(current_branch_name):
+    # print(f"Der Branchname '{current_branch_name}' enstspricht nicht dem Format : 'feature/[Bereich]_[Beschreibung]'")
+    print(f"Der Branchname enstspricht nicht dem Format : 'feature/[Bereich]_[Beschreibung]'.           Der Brachname war : '{current_branch_name}' ")
+    sys.exit(1)
+
+sys.exit(0)
