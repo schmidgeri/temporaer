@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+import re
+import sys
+
+# Auslesen der Commit-Message
+commit_msg_filepath = sys.argv[1]
+with open(commit_msg_filepath, 'r') as file:
+    commit_text = file.read()
+
+commit_regex = re.compile(r'^[A-Z]+-\d+ .+')
+# ----------------------------------
+# '^[A-Z]+ Beginnend Grossbuchstaben
+# -      Gefolgt von einem -
+# \d+    Gefolgt von Ziffern 0-9
+# space  gefolgt von einem Space
+# .+     gefolgt von n Zeichen
+# ----------------------------------
+
+# check ob Commit Text der Regex entspricht
+if not commit_regex.match(commit_text):
+    print("Die Commit Message enspricht nicht dem Format. 'SDS-9999 Beschreibung'")
+    sys.exit(1) 
+
+# Alles OK
+sys.exit(0)
