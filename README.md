@@ -1,8 +1,17 @@
 # temporaer
-Temporär, Playground
 
-Hinweis:
-- Beim Check-In prüfen wir die Message & den Branchname
-- Bei einem Clone werden die hooks nicht mitgeneommen
-- Nach einem Clone das command-line ausführen: cp ./hooks/commit-msg .git/hooks
-  
+
+## Motivation
+Das hier ist ein Playground um die GIT Kenntnisse zu vertiefen
+
+
+```
+git clone https://github.com/schmidgeri/temporaer.git
+```
+
+
+## Hinweis
+Damit die Hooks ziehen, bitte in Terminal von VS Code den Command ausführen:
+```
+cp ./hooks/commit-msg .git/hooks/
+```
