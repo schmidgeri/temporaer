@@ -17,7 +17,6 @@ commit_regex = re.compile(r'^[A-Z]+-\d+ .+')
 # space  gefolgt von einem Space
 # .+     gefolgt von n Zeichen
 # ----------------------------------
- 
 
 # check ob Commit Text der Regex entspricht
 if not commit_regex.match(commit_text):
@@ -28,7 +27,6 @@ if not commit_regex.match(commit_text):
 # prüfen des Branch-Namen
 # =======================
 current_branch_name = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip().decode('utf-8')
-
 
 if current_branch_name == 'HEAD':
     sys.exit(0)
@@ -46,13 +44,10 @@ commit_regex = re.compile(r'^feature/.+_.+')
 # .+     gefolgt von n Zeichen
 # ----------------------------------
 
-
 # check ob Commit Text der Regex entspricht
-# ----------------------------------
-# print('git rev-parse --abbrev-ref HEAD')
-# print(f"Vor Match / Der Brachname war : '{current_branch_name}'")
-if not commit_regex.match(current_branch_name):
+if commit_regex.match(current_branch_name):
+    # print(f"Der Branchname '{current_branch_name}' enstspricht nicht dem Format : 'feature/[Bereich]_[Beschreibung]'")
     print(f"Der Branchname enstspricht nicht dem Format : 'feature/[Bereich]_[Beschreibung]'.           Der Brachname war : '{current_branch_name}' ")
-    sys.exit(1)
+    sys.exit(0)
 
-sys.exit(0)
+sys.exit(1)
