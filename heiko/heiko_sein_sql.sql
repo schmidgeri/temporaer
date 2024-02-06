@@ -1,1 +1,1 @@
-SELECT * FROM heiko_seine_tabelle
+SELECT * FROM heiko_seine_tabelle LIMIT 999
