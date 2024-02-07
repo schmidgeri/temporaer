@@ -1,6 +1,6 @@
 SELECT *
 FROM Mitarbeiter
-WHERE Gehalt > 50000;
+WHERE Gehalt > 50001;  --Mutiert UseCase A
 
 SELECT *
 FROM Mitarbeiter
