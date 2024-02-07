@@ -12,4 +12,4 @@ WHERE Ueberzeit > 50;
 
 SELECT *
 FROM Mitarbeiter
-WHERE FerienTage > 50;
+WHERE FerienTage > 51;  -- Mutiert UseCase B
