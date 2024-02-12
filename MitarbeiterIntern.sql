@@ -4,7 +4,7 @@ WHERE Gehalt > 50001;  --Mutiert UseCase A
 
 SELECT *
 FROM Mitarbeiter
-WHERE Spesen > 5002;  -- Mutiert UseCase 01
+WHERE Spesen > 5002,5003;  -- Mutiert UseCase 01,02
 
 SELECT *
 FROM Mitarbeiter
