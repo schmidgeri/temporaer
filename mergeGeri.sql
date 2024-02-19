@@ -2,7 +2,7 @@ SELECT *
 FROM Mitarbeiter
 WHERE Gehalt > 50001;  
 
-SELECT *
+SELECT * 
 FROM Mitarbeiter
 WHERE Spesen > 5004;  
 
