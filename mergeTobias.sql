@@ -3,7 +3,7 @@ FROM Mitarbeiter
 WHERE Gehalt > 50001; 
 SELECT *
 FROM Mitarbeiter
-WHERE Spesen > 5004; 
+WHERE Spesen in (5050, 5004); 
 SELECT *
 FROM Mitarbeiter
 WHERE Ueberzeit > 50;
