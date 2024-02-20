@@ -4,7 +4,7 @@ WHERE Gehalt > 5001;
 
 SELECT *
 FROM Mitarbeiter
-WHERE Spesen > 5004;
+WHERE Spesen > 5004 and Spesen <6000;
 
 SELECT *
 FROM Mitarbeiter
