@@ -17,6 +17,7 @@ commit_regex = re.compile(r'^[A-Z]+-\d+ .+')
 # space  gefolgt von einem Space
 # .+     gefolgt von n Zeichen
 # ----------------------------------
+ 
 
 # check ob Commit Text der Regex entspricht
 if not commit_regex.match(commit_text):

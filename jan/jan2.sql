@@ -1,0 +1,1 @@
+Select abs FRM b

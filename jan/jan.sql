@@ -1,0 +1,1 @@
+select myself FROM Jan
